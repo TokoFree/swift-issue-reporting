@@ -14,7 +14,6 @@ let package = Package(
   products: [
     .library(name: "IssueReporting", targets: ["IssueReporting"]),
     .library(name: "IssueReportingTestSupport", targets: ["IssueReportingTestSupport"]),
-    .library(name: "XCTestDynamicOverlay", targets: ["XCTestDynamicOverlay"]),
   ],
   targets: [
     .target(
@@ -30,15 +29,10 @@ let package = Package(
     .target(
       name: "IssueReportingTestSupport"
     ),
-    .target(
-      name: "XCTestDynamicOverlay",
-      dependencies: ["IssueReporting"]
-    ),
     .testTarget(
       name: "XCTestDynamicOverlayTests",
       dependencies: [
         "IssueReportingTestSupport",
-        "XCTestDynamicOverlay",
       ]
     ),
   ]
